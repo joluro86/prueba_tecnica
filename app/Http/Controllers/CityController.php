@@ -16,12 +16,12 @@ class CityController extends Controller
         return view('cities.create');
     }
 
-    public function store(Request $request){
-        $city = New City();
-        $city->name = $request->name;
-        $city->save();
-        return redirect()->route('cities.index');
-    }
+        public function store(Request $request){
+            $city = New City();
+            $city->name = $request->name;
+            $city->save();
+            return redirect()->route('cities.index');
+        }
 
     public function show($id){
         $city = City::find($id);

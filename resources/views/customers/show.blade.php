@@ -6,11 +6,15 @@
 
 <div class="container">
 
-<h1 class="title-title">Datos de la ciudad</h1> <br>
+<h1 class="title-title">Datos del cliente</h1> <br>
 
-Id {{ $city->id }} <br>
+Id {{ $customer->id_number }} <br>
 
-Nombre de la ciudad {{ $city->name}} 
+Nombre {{ $customer->name}} <br>
+Fecha de nacimiento {{ $customer->name}} <br>
+Dirección {{ $customer->address}} <br>
+Telefono {{ $customer->phone}} <br>
+Ciudad {{ $customer->city->name}} <br>
 
 </div>
     

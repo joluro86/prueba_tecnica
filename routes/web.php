@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\CarController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,8 +39,34 @@ Route::controller(CustomerController::class)->group(function(){
     Route::get('customers/{id}', 'show')->name('customers.show');
     Route::post('customers','store')->name('customers.store');
     Route::get('customers_edit/{id}', 'edit')->name('customers.edit');
-    Route::delete('customers_delete/{city}', 'destroy')->name('customers.delete');
-    Route::put('customers_update/{city}', 'update')->name('customers.update');
+    Route::delete('customers_delete/{customer}', 'destroy')->name('customers.delete');
+    Route::put('customers_update/{customer}', 'update')->name('customers.update');
 });
+
+Route::controller(ProductController::class)->group(function(){
+    Route::get('products/', 'index')->name('products.index');
+    Route::get('products/create','create')->name('products.create');
+    Route::get('products/{id}', 'show')->name('products.show');
+    Route::post('products','store')->name('products.store');
+    Route::get('products_edit/{id}', 'edit')->name('products.edit');
+    Route::delete('products_delete/{product}', 'destroy')->name('products.delete');
+    Route::put('products_update/{product}', 'update')->name('products.update');
+});
+
+Route::controller(OrderController::class)->group(function(){
+    Route::get('orders/', 'index')->name('orders.index');
+    Route::get('orders/create','create')->name('orders.create');
+    Route::get('orders/{id}', 'show')->name('orders.show');
+    Route::post('orders','store')->name('orders.store');
+    Route::get('orders_edit/{id}', 'edit')->name('orders.edit');
+    Route::delete('orders_delete/{order}', 'destroy')->name('orders.delete');
+    Route::put('orders_update/{order}', 'update')->name('orders.update');
+});
+
+
+
+
+
+
 
 

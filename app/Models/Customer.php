@@ -9,4 +9,9 @@ class Customer extends Model
 {
     use HasFactory;
     protected $table='customers';
+
+    public function city()
+    {
+        return $this->belongsTo(City::class,'cities_id', 'id');
+    }
 }
